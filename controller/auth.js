@@ -52,7 +52,7 @@ const registerUser = async(req,res) => {
             username: req.body.name,
             email:req.body.email,
             password: hashedPassword,
-            isAdmin : true
+            isAdmin : false
         });
 
         await Profile.create({
