@@ -45,14 +45,13 @@ const getMessages = async(req,res) => {
          data : {
             messages : messagesList.map(msg => {
                return {
-                  ...msg, profile_img:process.env.SERVER_URL + msg.profile_img
+                  ...msg, profile_img:msg.profile_img ? process.env.SERVER_URL + msg.profile_img : null
                }
             })
          }
       });
 
      } catch(err) {
-        console.log(err)
         return sendErr("Server Error",res)
      }
    
@@ -121,7 +120,7 @@ const getChatList = async(req,res) => {
       data : {
          messages : chatList.map(chat => {
             return {
-               ...chat , profile_img : process.env.SERVER_URL + chat.profile_img
+               ...chat , profile_img : chat.profile_img ? process.env.SERVER_URL + chat.profile_img : null
             }
          })
       }

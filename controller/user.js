@@ -18,13 +18,12 @@ module.exports.getUser = async(req,res) => {
 
         const users = await sequelize.query(query,{type:QueryTypes.SELECT});
 
-        console.log(users)
 
         return res.status(201).send({
               status:"Success",
               data : {
                    users : users.map(user => {
-                       return {...user, profile_img : process.env.SERVER_URL + user.profile_img}
+                       return {...user, profile_img : user.profile_img ? process.env.SERVER_URL + user.profile_img : null}
                    })
               }
         });

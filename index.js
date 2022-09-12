@@ -33,7 +33,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
     cors : {
-        origin: "https://dumbmerch-client-4pinhdwh1-mikicey.vercel.app",
+        origin: "https://dumbmerch-client.vercel.app",
         methods: ["GET","POST","PUT","DELETE"],
     }
 });

@@ -1,6 +1,5 @@
 const Profile = require("../models/profile");
 const {sendErr} = require("../helper/other")
-const {minimumChecker} = require("../helper/auth")
 
 const fs = require('fs');
 const path = require("path"); 
